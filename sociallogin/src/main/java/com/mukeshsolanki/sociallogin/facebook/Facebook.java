@@ -1,4 +1,4 @@
-package com.mukeshsolanki.sociallogin;
+package com.mukeshsolanki.sociallogin.facebook;
 
 import android.app.Activity;
 import android.content.Intent;

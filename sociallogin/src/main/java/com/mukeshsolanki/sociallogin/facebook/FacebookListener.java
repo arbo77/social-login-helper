@@ -1,4 +1,4 @@
-package com.mukeshsolanki.sociallogin;
+package com.mukeshsolanki.sociallogin.facebook;
 
 public interface FacebookListener {
   void onFbSignInFail(String errorMessage);
