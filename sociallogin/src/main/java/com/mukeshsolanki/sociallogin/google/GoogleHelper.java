@@ -24,8 +24,8 @@ public class GoogleHelper implements GoogleApiClient.OnConnectionFailedListener 
   private GoogleListener mListener;
   private GoogleApiClient mGoogleApiClient;
 
-  public GoogleHelper(FragmentActivity context, @Nullable String serverClientId,
-      @NonNull GoogleListener listener) {
+  public GoogleHelper(@NonNull GoogleListener listener, FragmentActivity context,
+      @Nullable String serverClientId) {
     mContext = context;
     mListener = listener;
     buildGoogleApiClient(buildSignInOptions(serverClientId));

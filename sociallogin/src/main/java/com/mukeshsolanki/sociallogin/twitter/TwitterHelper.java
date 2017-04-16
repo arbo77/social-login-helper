@@ -34,8 +34,8 @@ public class TwitterHelper {
   private Callback<TwitterSession> mCallback = new Callback<TwitterSession>() {
     @Override public void success(Result<TwitterSession> result) {
       TwitterSession session = result.data;
-      mListener.onTwitterSignIn(session.getUserId(), session.getAuthToken().token,
-          session.getAuthToken().secret);
+      mListener.onTwitterSignIn(session.getAuthToken().token, session.getAuthToken().secret,
+          session.getUserId());
     }
 
     @Override public void failure(TwitterException exception) {
