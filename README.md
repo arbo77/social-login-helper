@@ -9,6 +9,13 @@
   <img src="https://raw.githubusercontent.com/mukeshsolanki/social-login-helper/master/login.png" width="480" />
 </p>
 
+## Supported Social Networks
+
+1. Google
+2. Facebook
+3. Twitter
+4. Instagram
+
 ## How to integrate into your app?
 Integrating the library into you app is extremely easy. A few changes in the build gradle and your all ready to use the library. Make the following changes.
 
@@ -25,7 +32,7 @@ allprojects {
 Step 2. Add the dependency
 ```java
 dependencies {
-    compile 'com.github.mukeshsolanki:social-login-helper:-1.0.0'
+    compile 'com.github.mukeshsolanki:social-login-helper:1.0.2'
 }
 ```
 

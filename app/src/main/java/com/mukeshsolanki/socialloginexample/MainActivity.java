@@ -10,18 +10,22 @@ import com.mukeshsolanki.sociallogin.facebook.FacebookHelper;
 import com.mukeshsolanki.sociallogin.facebook.FacebookListener;
 import com.mukeshsolanki.sociallogin.google.GoogleHelper;
 import com.mukeshsolanki.sociallogin.google.GoogleListener;
+import com.mukeshsolanki.sociallogin.instagram.InstagramHelper;
+import com.mukeshsolanki.sociallogin.instagram.InstagramListener;
 import com.mukeshsolanki.sociallogin.twitter.TwitterHelper;
 import com.mukeshsolanki.sociallogin.twitter.TwitterListener;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
-    implements FacebookListener, TwitterListener, GoogleListener, View.OnClickListener {
+    implements FacebookListener, TwitterListener, GoogleListener, InstagramListener,
+    View.OnClickListener {
 
-  private Button mFacebookButton, mTwitterButton, mGoogleButton;
+  private Button mFacebookButton, mTwitterButton, mGoogleButton, mInstagramButton;
   private TextView mDataTextView;
   private FacebookHelper mFacebook;
   private TwitterHelper mTwitter;
   private GoogleHelper mGoogle;
+  private InstagramHelper mInstagram;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -33,15 +37,18 @@ public class MainActivity extends AppCompatActivity
     mFacebookButton = (Button) findViewById(R.id.facebook_button);
     mGoogleButton = (Button) findViewById(R.id.google_button);
     mTwitterButton = (Button) findViewById(R.id.twitter_button);
+    mInstagramButton = (Button) findViewById(R.id.instagram_button);
     mDataTextView = (TextView) findViewById(R.id.data_received_text_view);
 
     mFacebookButton.setOnClickListener(this);
     mGoogleButton.setOnClickListener(this);
     mTwitterButton.setOnClickListener(this);
+    mInstagramButton.setOnClickListener(this);
 
     mFacebook = new FacebookHelper(this);
     mTwitter = new TwitterHelper(this, this, "Your Twitter Api Key", "Your Twitter Api Secret");
     mGoogle = new GoogleHelper(this, this, null);
+    mInstagram = new InstagramHelper(this, this, "Your Client Id", "Your Client Secret", "Your call back url");
   }
 
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -97,6 +104,18 @@ public class MainActivity extends AppCompatActivity
       case R.id.google_button:
         mGoogle.performSignIn(this);
         break;
+      case R.id.instagram_button:
+        mInstagram.performSignIn();
+        break;
     }
+  }
+
+  @Override public void onInstagramSignInFail(String errorMessage) {
+    mDataTextView.setText(errorMessage);
+  }
+
+  @Override public void onInstagramSignInSuccess(String authToken, String userId) {
+    mDataTextView.setText(
+        String.format(Locale.US, "User id:%s\n\nAuthToken:%s", userId, authToken));
   }
 }

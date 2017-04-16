@@ -34,4 +34,10 @@
         android:layout_height="wrap_content"
         android:text="Login with Twitter" />
 
+    <Button
+        android:id="@+id/instagram_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login with Instagram" />
+
 </LinearLayout>
