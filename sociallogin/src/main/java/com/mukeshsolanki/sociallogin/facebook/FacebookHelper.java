@@ -12,11 +12,11 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import java.util.Arrays;
 
-public class Facebook {
+public class FacebookHelper {
   private FacebookListener mListener;
   private CallbackManager mCallBackManager;
 
-  public Facebook(@NonNull FacebookListener facebookListener) {
+  public FacebookHelper(@NonNull FacebookListener facebookListener) {
     mListener = facebookListener;
     mCallBackManager = CallbackManager.Factory.create();
     FacebookCallback<LoginResult> mCallBack = new FacebookCallback<LoginResult>() {

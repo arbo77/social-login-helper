@@ -17,14 +17,14 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import java.io.IOException;
 
-public class Google implements GoogleApiClient.OnConnectionFailedListener {
+public class GoogleHelper implements GoogleApiClient.OnConnectionFailedListener {
   private final String SCOPES = "oauth2:profile email";
   private final int RC_SIGN_IN = 100;
   private FragmentActivity mContext;
   private GoogleListener mListener;
   private GoogleApiClient mGoogleApiClient;
 
-  public Google(FragmentActivity context, @Nullable String serverClientId,
+  public GoogleHelper(FragmentActivity context, @Nullable String serverClientId,
       @NonNull GoogleListener listener) {
     mContext = context;
     mListener = listener;

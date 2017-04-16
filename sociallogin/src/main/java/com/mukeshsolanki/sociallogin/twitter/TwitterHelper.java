@@ -1,24 +1,33 @@
 package com.mukeshsolanki.sociallogin.twitter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterAuthClient;
+import io.fabric.sdk.android.Fabric;
 
-public class Twitter {
+public class TwitterHelper {
   private TwitterAuthClient mAuthClient;
 
   @NonNull private final Activity mActivity;
 
   @NonNull private final TwitterListener mListener;
+  @NonNull private final String mTwitterApiKey;
+  @NonNull private final String mTwitterSecreteKey;
 
-  public Twitter(@NonNull TwitterListener response, @NonNull Activity context) {
+  public TwitterHelper(@NonNull TwitterListener response, @NonNull Activity context,
+      @NonNull String twitterApiKey, @NonNull String twitterSecreteKey) {
     mActivity = context;
     mListener = response;
+    mTwitterApiKey = twitterApiKey;
+    mTwitterSecreteKey = twitterSecreteKey;
     mAuthClient = new TwitterAuthClient();
   }
 
@@ -34,7 +43,9 @@ public class Twitter {
     }
   };
 
-  public void performSignIn() {
+  public void performSignIn(Context context) {
+    TwitterAuthConfig authConfig = new TwitterAuthConfig(mTwitterApiKey, mTwitterSecreteKey);
+    Fabric.with(context, new Twitter(authConfig));
     mAuthClient.authorize(mActivity, mCallback);
   }
 
