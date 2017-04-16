@@ -1,6 +1,6 @@
 <h1 align="center">Social Login Helper For Android</h1>
 <p align="center">
-  <a href="https://android-arsenal.com/api?level=9"> <img src="https://img.shields.io/badge/API-9%2B-blue.svg?style=flat" /></a>
+  <a href="https://android-arsenal.com/api?level=17"> <img src="https://img.shields.io/badge/API-17%2B-blue.svg?style=flat" /></a>
   <a href="https://jitpack.io/#mukeshsolanki/social-login-helper"> <img src="https://jitpack.io/v/mukeshsolanki/social-login-helper.svg" /></a>
   <a href="https://travis-ci.org/mukeshsolanki/social-login-helper"> <img src="https://travis-ci.org/mukeshsolanki/social-login-helper.svg?branch=master" /></a>
   <a href="https://www.paypal.me/mukeshsolanki"> <img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a>
