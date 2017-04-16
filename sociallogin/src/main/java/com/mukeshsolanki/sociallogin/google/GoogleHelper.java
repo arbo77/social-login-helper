@@ -15,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import java.io.IOException;
 
 public class GoogleHelper implements GoogleApiClient.OnConnectionFailedListener {
@@ -56,7 +58,7 @@ public class GoogleHelper implements GoogleApiClient.OnConnectionFailedListener 
 
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == RC_SIGN_IN) {
-      GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+      final GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
       if (result.isSuccess()) {
         AsyncTask<Void, Void, String> task = new AsyncTask<Void, Void, String>() {
           @Override protected String doInBackground(Void... params) {
@@ -87,7 +89,10 @@ public class GoogleHelper implements GoogleApiClient.OnConnectionFailedListener 
   }
 
   public void performSignOut() {
-    Auth.GoogleSignInApi.signOut(mGoogleApiClient)
-        .setResultCallback(status -> mListener.onGoogleAuthSignOut());
+    Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
+      @Override public void onResult(@NonNull Status status) {
+        mListener.onGoogleAuthSignOut();
+      }
+    });
   }
 }
