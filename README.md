@@ -47,7 +47,7 @@ FacebookHelper facebookHelper=new FacebookHelper(new FacebookListener() {
   }
 })
 ```
-That's pretty much it and your all wrapped up.
+That's pretty much it you can do the same for other social network login's too and your all wrapped up.
 
 ## Config
 
