@@ -58,6 +58,6 @@ That's pretty much it you can do the same for other social network login's too a
         android:value="@string/facebook_app_id" />
 ```
 
-2. For google you need to add `google-services.json to your projects root directory`
+2. For google you need to add `google-services.json` to your projects root directory
 
 3. For twitter you just need to pass it along with the helper.
