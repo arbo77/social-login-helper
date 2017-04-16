@@ -5,6 +5,7 @@
   <a href="https://travis-ci.org/mukeshsolanki/social-login-helper"> <img src="https://travis-ci.org/mukeshsolanki/social-login-helper.svg?branch=master" /></a>
   <a href="https://www.paypal.me/mukeshsolanki"> <img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a>
   <br /><br />A simple andorid library that helps you integrate social login into your apps. It supports Facebook, Google, Twitter. Lots more will be added later.
+  <br /><br/>
   <img src="https://raw.githubusercontent.com/mukeshsolanki/social-login-helper/master/login.png" width="480" />
 </p>
 
