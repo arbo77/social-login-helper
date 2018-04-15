@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/social login helper.iml" filepath="$PROJECT_DIR$/social login helper.iml" />
+      <module fileurl="file://D:\me\social-login-helper\app\app.iml" filepath="D:\me\social-login-helper\app\app.iml" />
+      <module fileurl="file://D:\me\social-login-helper\social login helper.iml" filepath="D:\me\social-login-helper\social login helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social-login-helper.iml" filepath="$PROJECT_DIR$/social-login-helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/sociallogin/sociallogin.iml" filepath="$PROJECT_DIR$/sociallogin/sociallogin.iml" />
+      <module fileurl="file://D:\me\social-login-helper\sociallogin\sociallogin.iml" filepath="D:\me\social-login-helper\sociallogin\sociallogin.iml" />
     </modules>
   </component>
 </project>

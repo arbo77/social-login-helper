@@ -22,7 +22,9 @@ public class FacebookHelper {
     FacebookCallback<LoginResult> mCallBack = new FacebookCallback<LoginResult>() {
       @Override public void onSuccess(LoginResult loginResult) {
         mListener.onFbSignInSuccess(loginResult.getAccessToken().getToken(),
-            loginResult.getAccessToken().getUserId());
+            loginResult.getAccessToken());
+//        mListener.onFbSignInSuccess(loginResult.getAccessToken().getToken(),
+//          loginResult.getAccessToken().getUserId());
       }
 
       @Override public void onCancel() {
